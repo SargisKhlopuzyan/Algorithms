@@ -15,6 +15,17 @@ public class MergeSort {
     private static int[] tempMergeArray;
 
     public static void main(){
+
+        try {
+            Object quickSort = Class.forName("QuickSort").newInstance();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         unSortedArray = new int[]{45, 23, 11, 89, 77, 98, 4, 28, 65, 43};
         tempMergeArray = new int[unSortedArray.length];
         doMergeSort(0, unSortedArray.length - 1);
